@@ -1,0 +1,530 @@
+body {
+    font-family: Helvetica;
+    background-color: #F1FADD;
+    margin: 20px;
+    padding: 0;
+}
+
+#recommendationSection {
+    display: none;
+}
+
+.container {
+    width: 1061px;
+    height: auto;
+    margin: 32px auto;
+    padding: 32px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header{
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    color: #00534F;
+}
+
+.text{
+    margin-top: -25px;
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: #00534F;
+}
+
+.capacity-options {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.capacity-options-2 {
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.capacity-btn {
+    background-color: #E3F2C2;
+    border: none;
+    padding: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 32px;
+    margin-bottom: 50px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.capacity-btn-2 {
+    background-color: #E3F2C2;
+    border: none;
+    padding: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-top: 1px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.capacity-btn.active, .capacity-btn-2.active {
+    background-color: #00534F; 
+    color: #E3F2C2; 
+}
+
+
+.capacity-btn:hover {
+    background-color: #00534F;
+    color: #E3F2C2;
+}
+
+.capacity-btn-2:hover {
+    background-color: #00534F;
+    color: #E3F2C2;
+}
+
+
+.line{
+    margin: auto;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.head{
+    margin-top:40px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #00534F;
+    margin-bottom: 40px;
+}
+
+.device-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-left: auto;
+    margin: 30px, 0px;
+    margin-bottom: 90px;
+}
+
+.device-input select{
+    width: auto;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: #00534F;
+    color: #E3F2C2;
+    cursor: pointer;
+}
+
+.device-input button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 105px;
+    height: 35px;
+    background-color: #00534F;
+    color: #E3F2C2;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.device-input button:hover {
+    background-color: #E3F2C2;
+    color: black;
+}
+
+.how-to-use{
+    text-decoration: none;
+    color: #E3F2C2;
+}
+
+.how-to-use:hover{
+    background-color: #E3F2C2;
+    color: black;
+}
+
+.device-table {
+    font-size: 20px;
+    width: 90%;
+    margin: 25px auto;
+    margin-bottom: 50px;    
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.device-table th, .device-table td {
+    border: 1px solid transparent;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.column {
+    background-color: #E3F2C2;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.device-list .device-list {
+    display: table-row;
+}
+
+.device-item .remove-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.device-item .qty-btn {
+    background-color: #E3F2C2;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.qty-btn:hover{
+    background-color: #00534F;
+    color: #E3F2C2;
+}
+
+.qty-btn {
+    width: 30px;
+    margin: 0 8px;
+    font-size: 20px;
+}
+
+.remove-btn {
+    color: #e57373;
+    font-size: 20px;
+}
+
+.remove-btn:hover {
+    color: red;
+}
+
+input[type="number"] {
+    width: 50px;
+    text-align: center;
+    border-color: transparent;
+    font-size: 20px;
+}
+
+.total-usage{
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #00534F;
+}
+
+#result{
+    width: 264px;
+    height: 88px;
+    margin: 0px auto;
+    font-size: 32px;
+    background-color: #E3F2C2;
+    color: #00534F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#resultDesc{
+    font-size: 24px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.line-2{
+    margin-top: 20px;
+    width: 89%;
+    border: 1px solid black;
+}
+
+.line-3{
+    width: 50%;
+    border: 1px solid black;
+    margin: 30px auto;
+}
+
+.checkout-btn {
+    width: 587px;
+    height: 73px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+    fill: #fff;
+    color: #00534F;
+    border: 2px solid transparent;
+    background: #E3F2C2;
+    transition: all 200ms;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+    .checkout-btn:hover {
+    color: #F1FADD;
+    border: 2px solid #E3F2C2;
+    background-color: #00534F;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container{
+        width: 543px;
+        border-radius: 35px;
+        margin-top: 50px;
+        margin-left: 100px;
+    }
+    .header{
+        font-size: 36px;
+        width: 376px;
+        margin: 0px auto;
+    }
+    .text{
+        margin-top: 20px;
+        font-size: 24px;
+    }
+    .checkout-btn{
+        margin-left: 209px;
+        margin-right: 209px;
+        width: 350px;
+        height: 60px;
+        font-size: 20px;
+    }
+    .device-table{
+        font-size: 13px;
+    }
+    .column{
+        font-size: 13px;
+    }
+    .capacity-options {
+        gap: 50px;
+    }
+    
+    .capacity-options-2 {
+        gap: 50px;
+    }
+
+    .capacity-btn {
+        padding-top:9px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        height: 33px;
+    }
+    
+    .capacity-btn-2 {
+        padding-top: 9px;
+        font-size: 14px;
+        margin-bottom: 30px;
+        height: 33px;
+    }
+
+    .head{
+        font-size: 20px;
+    }
+
+    .total-usage{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .qty-btn {
+        display: none;
+    }
+    
+    input[type="number"] {
+        width: 40px;
+        font-size: 13px;
+    }
+
+    #result{
+        margin-top: 10px;
+        font-size: 16px;
+        width: 152px;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    #resultDesc{
+        font-size: 11px;
+        width: 232px;
+        height: 11px;
+        margin: 15px auto;
+    }
+
+    .checkout-btn {
+        width: 300px;
+        height: 45px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-left: 220px;
+        margin-bottom: 50px;
+        font-size: 18px;
+    }
+    .device-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-left: auto;
+        margin: 30px, 0px;
+        margin-bottom: 90px;
+    }
+    
+    .device-input select{
+        width: 120px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .device-input button {
+        width: 105px;
+        height: 30px;
+        font-size: 11px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .container{
+        width: 270px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    .header{
+        font-size: 15px;
+        width: 157px;
+        margin-top: 10px;
+    }
+
+    .text{
+        font-size: 11px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    .capacity-options{
+        gap: 20px;
+    }
+
+    .capacity-options-2{
+        gap: 20px;
+    }
+
+    .capacity-btn{
+        font-size: 10px;
+        height: 21px;
+        padding-top: 7px;
+        margin-bottom: 10px;
+    }
+
+    .capacity-btn-2{
+        font-size: 10px;
+        height: 21px;
+        padding-top: 7px;
+        margin-bottom: 15px;
+    }
+    .head{
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .device-table{
+        font-size: 8px;
+        margin-bottom: 15px;
+    }
+
+    .column{
+        font-size: 8px;
+    }
+
+    .qty-btn {
+        display: none;
+    }
+    
+    input[type="number"] {
+        width: 20px;
+        font-size: 8px;
+    }
+
+    .remove-btn{
+        font-size: 8px;
+    }
+
+    .device-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+    
+    .device-input select{
+        width: 90px;
+        height: auto;
+        font-size: 7px;
+        padding-top: 8px;
+    }
+
+    .device-input button {
+        width: 50px;
+        height: 25px;
+        font-size: 7px;
+        padding-top: 5px;
+    }
+
+    .total-usage{
+        margin-top: 40px;
+        font-size: 12px;
+    }
+
+    #result{
+        margin-top: -10px;
+        font-size: 11px;
+        width: 104px;
+        height: 24px;
+        border-radius: 5px;
+    }
+
+    #resultDesc{
+        font-size: 8px;
+        width: 232px;
+        height: 10px;
+        margin: 15px auto;
+    }
+
+    .checkout-btn {
+        margin-left: 90px;
+        width: 150px;
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 50px;
+        padding-top: 2px;
+    }
+  }

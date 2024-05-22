@@ -1,0 +1,281 @@
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 30px 20px 30px;
+  color: #ffffff;
+  background-color: #00534F;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+.footer__logo img {
+  margin-top: -20px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  width: 220px;
+  height: 75px;
+}
+ 
+.nav__title {
+  margin-top: -5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.footer address {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  width: 410px;
+  font-style: normal;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.email {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 60px;
+  color: white;
+}
+
+.number{
+  margin-top: 5px;
+  font-size: 24px;
+  margin-left: 60px;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+.footer__nav {
+  margin-top: 20px;
+  margin-left: 150px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.nav__ul li{
+  margin-right: 20px;
+  display: inline;
+}
+
+.nav__ul li img{
+  width: 58px;
+  height: 58px;
+}
+
+.line-foot{
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.legal {
+  font-size: 24px;
+  margin-left: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #ffffff;
+}
+  
+.legal__links {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.legal__links .privacy{
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 35px;
+}
+
+.legal__links .term{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.legal__links .privacy:hover{
+  color: #898989;
+}
+
+.legal__links .term:hover{
+  color: #898989;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__logo img {
+      margin-top: -20px;
+      margin-bottom: 5px;
+      margin-left: 30px;
+      width: 220px;
+      height: 70px;
+  }
+
+  .footer address {
+      margin-left: 30px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      width: 337px;
+  }
+
+  .email {
+      font-weight: bold;
+      font-size: 16px;
+      margin-left: 30px;
+  }
+
+  .number{
+      margin-top: 5px;
+      font-size: 16px;
+      margin-left: 30px;
+  }
+
+  .nav__title {
+      margin-top: 15px;
+      margin-bottom: 30px;
+      font-size: 20px;
+  }
+
+  .footer__nav {
+      margin-left: 70px;
+  }
+
+  .nav__ul li{
+      margin-right: 10px;
+      display: inline;
+  }
+
+  .nav__ul li img{
+      width: 43px;
+      height: 43px;
+  }
+
+  .legal {
+      margin-left: 40px;
+      font-size: 16px;
+}
+      
+    .legal__links {
+      font-size: 16px;
+      margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer__logo img {
+      margin-top: 0px;
+      margin-bottom: 5px;
+      margin-left: 15px;
+      width: 67px;
+      height: 19px;
+  }
+
+  .footer address {
+      margin-top: 0px;
+      margin-left: 15px;
+      margin-bottom: 10px;
+      font-size: 10px;
+      width: 130px;
+  }
+
+  .email {
+      font-size: 8px;
+      margin-left: 15px;
+  }
+
+  .number{
+      margin-top: 5px;
+      font-size: 8px;
+      margin-left: 15px;
+  }
+
+  .nav__title {
+      margin-top: -164px;
+      margin-bottom: 15px;
+      font-size: 10px;
+  }
+
+  .footer__nav {
+      margin-left: 170px;
+  }
+
+  .nav__ul li{
+      margin-right: 5px;
+      margin-bottom: 5px;
+      display: inline;
+  }
+
+  .nav__ul li img{
+      width: 25px;
+      height: 25px;
+  }
+
+  .legal {
+      margin-left: 10px;
+      font-size: 7px;
+  }
+      
+  .legal__links{
+      margin-right: 15px;
+  }
+
+  .legal__links .privacy{
+      margin-left: 95px;
+      font-size: 7px;
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: 10px;
+  }
+  
+  .legal__links .term{
+      margin-left: none;
+      font-size: 7px;
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 390px) {
+  .legal .legal__links {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 646px) {
+  .footer__nav > * {
+    flex: 1;
+  }
+  
+  .nav__item--extra {
+    flex-grow: 2;
+  }
+  
+  .footer__addr {
+    flex: 1 0px;
+  }
+  
+  .footer__nav {
+    flex: 2 0px;
+  }
+}
