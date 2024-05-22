@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Planning & Recommendations - SILEKSI</title>
+    <link rel="stylesheet" href=".\css\calc.css">
+    <link rel="stylesheet" href=".\css\footer.css">
+    <link rel="stylesheet" href=".\css\navbar.css">
+    <link rel="stylesheet" href=".\css\recommendation.css">
+
+</head>
+<body>
+    <nav>
+        <div class="burger-wrapper">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+        </div>
+        <div class="logo-navbar">
+            <a href="awal.html">
+                <img src=".\img\Logo.png" alt="SILEKSI">
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="CalcandRecom.html">Calculations</a></li>
+            </ul>
+        </div>
+        <div class="right-icons">
+            <a href="Bookmark.html" class="bookmark-button">
+                <img src=".\img\Bookmark.png" alt="Bookmark" height="25px">
+            </a>
+            <a href="Profile.html" class="account-button">
+                <img src=".\img\Account.png" alt="Account" height="25px">
+            </a>
+        </div>
+        <div class="overlay"></div>
+        <div class="dropdown-menu">
+            <div class="logo-container">
+                <img src=".\img\Logo.png" alt="Logo" class="dropdown-logo">
+            </div>
+            <div class="separator"></div>
+            <div class="dropdown-list">
+                <a href="About.html">About</a>
+                <a href="Products.html">Products</a>
+                <a href="CalcandRecom.html">Calculations</a>
+                <a href="Bookmark.html">Bookmark</a>
+            </div>
+            <div class="dropdown-account-separator">
+                <div class="separator"></div>
+                <div class="dropdown-account">
+                    <img src=".\img\profile.jpeg" alt="profile">
+                    <p class="nickname">jokonowo</p>
+                </div>
+            </div>
+        </div>
+        <script src=".\js\navbar.js"></script>
+    </nav>
+    <!-- Halaman Calc -->
+    <div style="height: 100px;"></div>
+
+    <div class="container">
+        <h1 class="header">Let's start your power planning</h1>
+        <p class="text">Choose your house electricity capacity</p>
+        <div class="capacity-options">
+            <button class="capacity-btn">450VA</button>
+            <button class="capacity-btn">900VA</button>
+            <button class="capacity-btn">1300VA</button>
+        </div>
+        <div class="capacity-options-2">
+            <button class="capacity-btn-2">2200VA</button>
+            <button class="capacity-btn-2">Other</button>
+        </div>
+        <hr class="line">
+        <h2 class="head">Add your device</h2>
+        
+        <table class="device-table">
+            <thead>
+                <tr class="column">
+                    <th>Device name</th>
+                    <th>Usage per device</th>
+                    <th>Qty</th>
+                    <th>Total usage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="device-list"></tbody>
+        </table>
+        <div class="device-input">
+            <select id="deviceType">
+                <option value="" disabled selected>Choose device</option>
+                <option value="Fridge">Fridge (70 Watt)</option>
+                <option value="Microwave">Microwave (1000 Watt)</option> 
+                <option value="Rice Cooker">Rice Cooker (400 Watt)</option>
+                <option value="Blender">Blender (29 Watt)</option>
+                <option value="Washing Machine">Washing Machine (170 Watt)</option>
+                <option value="Vaccum Cleaner">Vaccum Cleaner (450 Watt)</option>
+                <option value="Fan">Fan (50 Watt)</option> 
+                <option value="TV">TV (100 Watt)</option> 
+                <option value="Iron">Iron (300 Watt)</option>
+                <option value="LED Lamp">LED Lamp (8 Watt)</option>
+                <option value="AC">AC 2.5 PK(1600 Watt)</option>
+            </select>
+            <button id="addDevice">Add device</button>
+            <button id="howToUse"><a href="HowToUse.html" class="how-to-use">How to use</a></button>
+        </div>
+        <h3 class="total-usage">Total usage: <span id="totalUsage">0</span> Watt</h3>
+        <hr class="line-3">
+        <h4 id="result">Result</h4>
+        <p id="resultDesc"></p>
+    </div>
+    <input type="button" class="checkout-btn" onClick="document.getElementById('middle').scrollIntoView(); document.getElementById('recommendationSection').style.display = 'block';" value="Our Recommended Products" />
+
+    <!-- jarak antara  2 halaman -->
+    <div style="height: 50px;"></div>
+
+    <!-- Halaman Recommendation -->
+    <div class="recommendation-section" id="recommendationSection">
+        <header>
+            <h1>We <strong>recommend</strong> the best choice for saving</h1>
+        </header>
+        <div class="container2">
+            <div class="savings">
+                <div class="product-background">
+                    <span class="savings-amount">Here's all our recommended products</span>
+                </div>
+                <button class="filter-button" id="openFilterPopup">
+                    <img src=".\img\filter.png" alt="filter icon">
+                </button>
+                <main>
+                    <div class="product-list">
+                        <!-- Produk akan ditampilkan di sini oleh JavaScript -->
+                    </div>
+                    <a href="Products.html" class="view-more-link">View More</a>
+                </main>
+            </div>
+        </div>
+        
+        <!-- Popup -->
+        <div class="popup" id="filterPopup">
+            <div class="popup-content">
+                <span class="close" id="closePopup">&times;</span>
+                <div class="select-menu" id="category-select-menu">
+                    <div class="select-btn">
+                        <span class="sBtn-text">Category</span>
+                        <img src=".\img\arrow.png" alt="Arrow" class="dropdown-arrow">
+                    </div>
+                    <ul class="options">
+                        <li class="option">
+                            <span class="option-text">Kitchen Electronics</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Televisions</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Air Conditioner</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Fridge & Freezer</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Home Electronics</span>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="select-menu" id="brand-select-menu">
+                    <div class="select-btn">
+                        <span class="sBtn-text">Brand</span>
+                        <img src=".\img\arrow.png" alt="Arrow" class="dropdown-arrow">
+                    </div>
+                    <ul class="options">
+                        <li class="option">
+                            <span class="option-text">Samsung</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">LG</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Sharp</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Xiaomi</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Panasonic</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Kels</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Krisbow</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Cosmos</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Electrolux</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Philips</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Daikin</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Aqua</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Beko</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="select-menu" id="watt-select-menu">
+                    <div class="select-btn">
+                        <span class="sBtn-text">Watt</span>
+                        <img src=".\img\arrow.png" alt="Arrow" class="dropdown-arrow">
+                    </div>
+                    <ul class="options">
+                        <li class="option">
+                            <span class="option-text">Lowest</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text">Highest</span>
+                        </li>
+                    </ul>
+                </div>
+                <span class="button-container">
+                    <button id="resetFilterButton" class="reset-button">Reset</button>
+                    <button id="applyFilterButton">Apply</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer__addr">
+          <h1 class="footer__logo"><img src=".\img\Logo Sileksi REVIISIIII 1.png" alt=""></h1>
+        
+          <address>
+            Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145<br>                            
+          </address>
+
+          <p><a class="email" href="mailto:example@gmail.com">sileksi@email.com</a><br></p>
+          <p class="number">0812 3456 7890</p>
+
+        </div>
+        
+        <ul class="footer__nav">
+          <li class="nav__item">
+            <h2 class="nav__title">Follow us</h2>    
+            <ul class="nav__ul">
+              <li>
+                <a href="#"><img src=".\img\twitter.png" alt=""></a>
+              </li>
+      
+              <li>
+                <a href="#"><img src=".\img\Instagram_logo_2022 1.png" alt=""></a>
+              </li>
+                  
+              <li>
+                <a href="#"><img src=".\img\Linkedin.png" alt=""></a>
+              </li>
+
+              <li>
+                <a href="#"><img src=".\img\fb_icon_325x325 1.png" alt=""></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <hr class="line-foot">
+        <div class="legal">
+          <p>&copy;SILEKSI.</p>
+          
+          <div class="legal__links">
+            <a href="https://filkom.ub.ac.id/" class="privacy">Privacy Policy</a>
+            <a href="#" class="term">Term of Use</a>
+          </div>
+        </div>
+      </footer>
+    <script src=".\js\calculation.js"></script>
+    <script src=".\js\navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\css\register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Register</title>
+</head>
+<body>
+    <section class="add-card page">
+        <form class="form">
+            <h2>Create your new account!</h2>
+            <label for="email" class="label">
+                <span class="title">Email Address</span>
+                <input
+                    class="input-field"
+                    name="input-name"
+                    title="Input title"
+                    placeholder="Enter your email address"
+                />
+            </label>
+
+            <label for="name" class="label">
+                <span class="title">Username</span>
+                <input
+                    class="input-field"
+                    name="input-name"
+                    title="Input title"
+                    placeholder="Enter your username"
+                />
+            </label>
+            
+            <label for="Password" class="label">
+                <span class="title">Password</span>
+                <input
+                    id="Password"
+                    class="input-field"
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                > <i id="togglePassword" class="fas fa-eye-slash pass-icon" onclick="togglePasswordVisibility()"></i>
+            </label>
+
+            <label for="ConfirmPassword" class="label">
+                <span class="title">Confirm Password</span>
+                <input
+                    id="ConfirmPassword"
+                    class="input-field"
+                    name="confirm-password"
+                    type="password"
+                    placeholder="Confirm your password"
+                >
+                <i id="toggleConfirmPassword" class="fas fa-eye-slash pass-icon" onclick="toggleConfirmPasswordVisibility()"></i>
+               
+            </label>
+            
+
+            <a href="Login2.html" class="checkout-btn">Register</a>
+
+        </form>
+    </section>
+    <script src=".\js\password.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\css\login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Log In</title>
+</head>
+<body>
+    <img src=".\img\Logo Sileksi REVIISIIII 1.png" alt="Logo Sileksi" style="align-items: center;">
+    <section class="add-card page">
+        <form class="form">
+            <h2>Login</h2>
+            <label for="name" class="label">
+                <span class="title">Email Address or Username</span>
+                <input
+                    class="input-field"
+                    name="input-name"
+                    title="Input title"
+                    placeholder="Enter your email or username"
+                />
+            </label>
+            
+            <label for="Password" class="label">
+                <span class="title">Password</span>
+                <input
+                    id="Password"
+                    class="input-field"
+                    name="input-name"
+                    placeholder="Enter your password"
+                > <i id="togglePassword"class="fas fa-eye-slash pass-icon" onclick="togglePasswordVisibility()"></i>
+            </label>
+            
+            <div class="flex-row">
+                <div>
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                  <label>Remember me </label>
+                </div>
+                <a href="#" class="span">Forget Password?</a>
+              </div>
+            <a href="About.html" class="checkout-btn">Login</a>
+            <p class="p">Don't have an account? <a href="Register.html" class="p" style="font-weight: bold;">Register</a></p>
+        </form>
+    </section>
+    <script src=".\js\password.js"></script>
+</body>
+</html>

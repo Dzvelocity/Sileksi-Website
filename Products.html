@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+    <link rel="stylesheet" href="./css/styleProducts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <nav>
+        <div class="burger-wrapper">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+        </div>
+        <div class="logo-navbar">
+            <a href="awal.html">
+                <img src=".\img\Logo.png" alt="SILEKSI">
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="CalcandRecom.html">Calculations</a></li>
+            </ul>
+        </div>
+        <div class="right-icons">
+            <a href="Bookmark.html" class="bookmark-button">
+                <img src=".\img\Bookmark.png" alt="Bookmark" height="25px">
+            </a>
+            <a href="Profile.html" class="account-button">
+                <img src=".\img\Account.png" alt="Account" height="25px">
+            </a>
+        </div>
+        <div class="overlay"></div>
+        <div class="dropdown-menu">
+            <div class="logo-container">
+                <img src=".\img\Logo.png" alt="Logo" class="dropdown-logo">
+            </div>
+            <div class="separator"></div>
+            <div class="dropdown-list">
+                <a href="About.html">About</a>
+                <a href="Products.html">Products</a>
+                <a href="CalcandRecom.html">Calculations</a>
+                <a href="Bookmark.html">Bookmark</a>
+            </div>
+            <div class="dropdown-account-separator">
+                <div class="separator"></div>
+                <div class="dropdown-account">
+                    <img src=".\img\profile.jpeg" alt="profile">
+                    <p class="nickname">jokonowo</p>
+                </div>
+            </div>
+        </div>
+        <script src=".\js\navbar.js"></script>
+    </nav>
+</head>
+
+<body>
+
+<div class="menu-product">
+    <div class="book-green">
+        <a href="bookmark.html">
+            <img src="img/Bookmark green.png" alt="">
+        </a>
+        
+    </div>
+
+    <div class="sidebar">
+        <button onclick="togglePanel('categoryPanel', 'categoryButton')">Category</button>
+        <button onclick="togglePanel('brandPanel', 'brandButton')">Brand</button>
+        <button onclick="togglePanel('sortbyPanel', 'sortbyButton')">Sort by</button>
+        <button onclick="resetFilters()">Reset Filters</button>
+    </div>
+
+    <div class="category-panel panel" id="categoryPanel">
+        <div class="close-icon" onclick="togglePanel(categoryPanel, categoryButton)">
+            <i class="fas fa-times"></i> <!-- Font Awesome close icon -->
+        </div>
+        <ul>
+            <img src="img/Logo Sileksi REVIISIIII 1.png" alt="SILEKSI">
+            <li class="head">Category</li>
+            <li><button class="all" data-category="all" onclick="filterProducts('all')">All</button></li>
+            <li><button class="devices" data-category="kitchen-electronics" onclick="filterProducts('kitchen-electronics')">Kitchen Electronics</button></li>
+            <li><button class="devices" data-category="television" onclick="filterProducts('television')">Television</button></li>
+            <li><button class="devices" data-category="air-conditioner" onclick="filterProducts('air-conditioner')">Air Conditioner</button></li>
+            <li><button class="devices" data-category="fridge-freezer" onclick="filterProducts('fridge-freezer')">Fridge & Freezer</button></li>
+            <li><button class="devices" data-category="home-electronics" onclick="filterProducts('home-electronics')">Home Electronics</button></li>
+            <li><button class="devices" data-category="washing-machine" onclick="filterProducts('washing-machine')">Washing Machine</button></li>
+            <li><button class="devices" data-category="gadget-accessories" onclick="filterProducts('gadget-accessories')">Gadget Accessories</button></li>
+        </ul>
+    </div>
+            
+
+    <div class="brand-panel panel" id="brandPanel">
+        <div class="close-icon" onclick="togglePanel(brandPanel, brandButton)">
+            <i class="fas fa-times"></i> <!-- Font Awesome close icon -->
+            <ul>
+                <img src="img/Logo Sileksi REVIISIIII 1.png" alt="SILEKSI">
+                <li class="head">Brand</li>
+                <li><button class="all" data-brand="all" onclick="filterBrands('all')">All</button></li>
+                <li><button class="brand" data-brand="aqua" onclick="filterBrands('aqua')">Aqua</button></li>
+                <li><button class="brand" data-brand="beko" onclick="filterBrands('beko')">Beko</button></li>
+                <li><button class="brand" data-brand="cosmos" onclick="filterBrands('cosmos')">Cosmos</button></li>
+                <li><button class="brand" data-brand="daikin" onclick="filterBrands('daikin')">Daikin</button></li>
+                <li><button class="brand" data-brand="electrolux" onclick="filterBrands('electrolux')">Electrolux</button></li>
+                <li><button class="brand" data-brand="kels" onclick="filterBrands('kels')">Kels</button></li>
+                <li><button class="brand" data-brand="kris" onclick="filterBrands('kris')">Kris</button></li>
+                <li><button class="brand" data-brand="krisbow" onclick="filterBrands('krisbow')">Krisbow</button></li>
+                <li><button class="brand" data-brand="lg" onclick="filterBrands('lg')">LG</button></li>
+                <li><button class="brand" data-brand="panasonic" onclick="filterBrands('panasonic')">Panasonic</button></li>
+                <li><button class="brand" data-brand="philips" onclick="filterBrands('philips')">Philips</button></li>
+                <li><button class="brand" data-brand="samsung" onclick="filterBrands('samsung')">Samsung</button></li>
+                <li><button class="brand" data-brand="sharp" onclick="filterBrands('sharp')">Sharp</button></li>
+                <li><button class="brand" data-brand="xiaomi" onclick="filterBrands('xiaomi')">Xiaomi</button></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="sortby-panel panel" id="sortbyPanel">
+        <div class="close-icon" onclick="togglePanel(sortbyPanel, sortbyButton)">
+            <i class="fas fa-times"></i> <!-- Font Awesome close icon -->
+        </div>
+        <ul>
+            <img src="img/Logo Sileksi REVIISIIII 1.png" alt="SILEKSI">
+            <li class="head">Sort by</li>
+            <li><button onclick="sortProducts('asc')">Watt asc</button></li>
+            <li><button onclick="sortProducts('dsc')">Watt dsc</button></li>
+        </ul>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card" id="product1" data-category="fridge-freezer" data-brand="sharp">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product1" onclick="toggleBookmark('product1', 'SHARP 2-Door Refrigerator', 'SHARP Kulkas 2 Pintu SJ-450-GP-SD.webp', '100 W', 'fridge-freezer')">
+            </div>
+            <div class="border-pict">
+                <img src="img/SHARP Kulkas 2 Pintu SJ-450-GP-SD.webp" alt="SHARP 2-Door Refrigerator">
+            </div>
+            <h3><a href="description/kulkas SHARP.html" >SHARP 2-Door Refrige...</a></h3>
+            <p>Capacity: 100 W</p>
+        </div>
+
+        <div class="product-card" id="product2" data-category="washing-machine" data-brand="aqua">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product2" onclick="toggleBookmark('product2', 'Aqua Top Loading AQW', 'Aqua Top Loading AQW-800F.webp', '290 W')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Aqua Top Loading AQW-800F.webp" alt="Aqua Top Loading AQW">
+            </div>
+            <h3><a href="description/mc aqua.html">Aqua Top Loading AQW</a></h3>
+            <p>Capacity: 290 W</p>
+        </div>
+
+        <div class="product-card" id="product3" data-category="home-electronics" data-brand="kris">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product3" onclick="toggleBookmark('product3', 'Kris Mechanical Stan...', 'Kris Kipas Angin Berdiri Mechanical.webp', '40 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Kris Kipas Angin Berdiri Mechanical.webp" alt="Kris Mechanical Standing Fan">
+            </div>
+            <h3><a href="description/kipas Kris.html" class="title">Kris Mechanical Stan...</a></h3>
+            <p>Capacity: 40 W</p>
+        </div>
+
+        <div class="product-card" id="product4" data-category="kitchen-electronics" data-brand="sharp">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product4" onclick="toggleBookmark('product4', 'SHARP Microwave R-21...', 'SHARP Microwave R-21D0(S).jpg', '450 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/SHARP Microwave R-21D0(S).jpg" alt="Samsung 50 Inch LED 4K">
+            </div>
+            <h3><a href="description/microwave sharp.html" class="title">SHARP Microwave R-21...</a></h3>
+            <p>Capacity: 450 W</p>
+        </div>
+
+        <div class="product-card" id="product5" data-category="television" data-brand="xiaomi">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product5" onclick="toggleBookmark('product5', 'Xiaomi TV A2 32”', 'Xiaomi TV A2 32.jpg', '55 W', 'television')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Xiaomi TV A2 32.jpg" alt="Daikin Set Air Conditioner">
+            </div>
+            <h3><a href="description/TV Xiaomi.html" class="title">Xiaomi TV A2 32”</a></h3>
+            <p>Capacity: 55 W</p>
+        </div>
+
+        <div class="product-card" id="product6" data-category="air-conditioner" data-brand="samsung">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product6" onclick="toggleBookmark('product6', 'Samsung 2 PK Wall-mo...', '2 PK Wall-mounted Air Conditioner AR5000HM copy.avif', '1470 W', 'air-conditioner')">
+            </div>
+            <div class="border-pict">
+                <img src="img/2 PK Wall-mounted Air Conditioner AR5000HM.avif" alt="Desk Lamp LED">
+            </div>
+            <h3><a href="description/AC Samsung.html" class="title">Samsung 2 PK Wall-mo...</a></h3>
+            <p>Capacity: 1470 W</p>
+        </div>
+
+        <div class="product-card" id="product7" data-category="fridge-freezer" data-brand="lg">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product7" onclick="toggleBookmark('product7', 'LG 2 Door Refrigerat...', 'LG Kulkas 2 Pintu GN-G222SCLB.webp', '70 W', 'fridge-freezer')">
+            </div>
+            <div class="border-pict">
+                <img src="img/LG Kulkas 2 Pintu GN-G222SCLB.webp" alt="Kris Lamp LED">
+            </div>
+            <h3><a href="description/kulkas LG.html" class="title">LG 2 Door Refrigerat...</a></h3>
+            <p>Capacity: 70 W</p>
+        </div>
+
+        <div class="product-card" id="product8" data-category="washing-machine" data-brand="sharp">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product8" onclick="toggleBookmark('product8', 'SHARP Top Loading ES...', 'SHARP Top Loading ES-M8500XT.webp', '170 W', 'washing-machine')">
+            </div>
+            <div class="border-pict">
+                <img src="img/SHARP Top Loading ES-M8500XT.webp" alt="Kris Aircooler Evaporator">
+            </div>
+            <h3><a href="description/mc sharp.html" class="title">SHARP Top Loading ES...</a></h3>
+            <p>Capacity: 170 W</p>
+        </div>
+        
+        <div class="product-card" id="product9" data-category="gadget-accessories" data-brand="kels">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product9" onclick="toggleBookmark('product9', 'Kels Shea USB Rechar...', 'Kels Shea Kipas Angin USB Rechargeable.webp', '5 W', 'gadget-accessories')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Kels Shea Kipas Angin USB Rechargeable.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/kipas kels.html" class="title">Kels Shea USB Rechar...</a></h3>
+            <p>Capacity: 5 W</p>
+        </div>
+
+        <div class="product-card" id="product10" data-category="fridge-freezer"  data-brand="samsung">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product10" onclick="toggleBookmark('product10', 'SAMSUNG RT-22FARB...', 'SAMSUNG Kulkas 2 Pintu RT-22FARBDSA.webp', '100 W', 'fridge-freezer')">
+            </div>
+            <div class="border-pict">
+                <img src="img/SAMSUNG Kulkas 2 Pintu RT-22FARBDSA.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/kulkas samsung.html" class="title">SAMSUNG RT-22FARB...</a></h3>
+            <p>Capacity: 100 W</p>
+        </div>
+
+        <div class="product-card" id="product11" data-category="washing-machine" data-brand="lg">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product11" onclick="toggleBookmark('product11', 'LG Top Loading T2107...', 'LG Top Loading T2107VSPCK.webp', '400 W', 'washing-machine')">
+            </div>
+            <div class="border-pict">
+                <img src="img/LG Top Loading T2107VSPCK.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/mc LG.html" class="title">LG Top Loading T2107...</a></h3>
+            <p>Capacity: 400 W</p>
+        </div>
+
+        <div class="product-card" id="product12" data-category="home-electronics" data-brand="krisbow">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product12" onclick="toggleBookmark('product12', 'Krisbow 16 Inch Stea...', 'Krisbow 16 Inci Kipas Angin Uap.webp', '25 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Krisbow 16 Inci Kipas Angin Uap.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/kipas krisbow.html" class="title">Krisbow 16 Inch Stea...</a></h3>
+            <p>Capacity: 25 W</p>
+        </div>
+
+        <div class="product-card" id="product13" data-category="kitchen-electronics" data-brand="panasonic">
+            <div class="border-book">
+                <img src="img/img/bookmark.png" class="book-pic" data-product-id="product13" onclick="toggleBookmark('product13', 'Panasonic 25 Ltr Mic...', 'Panasonic 25 Ltr Microwave NN-ST32NBTTE.webp', '450 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Panasonic 25 Ltr Microwave NN-ST32NBTTE.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Microwave Panasonic.html" class="title">Panasonic 25 Ltr Mic...</a></h3>
+            <p>Capacity: 450 W</p>
+        </div>
+
+        <div class="product-card" id="product14" data-category="kitchen-electronics" data-brand="samsung">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product14" onclick="toggleBookmark('product14', 'SAMSUNG 23 Ltr Micro...', 'SAMSUNG 23 Ltr Microwave MS23K3515AS.webp', '900 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/SAMSUNG 23 Ltr Microwave MS23K3515AS.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Microwave Samsung.html" class="title">SAMSUNG 23 Ltr Micro...</a></h3>
+            <p>Capacity: 900 W</p>
+        </div>
+
+        <div class="product-card" id="product15" data-category="television" data-brand="lg">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product15" onclick="toggleBookmark('product15', 'Smart TV 4K LG UHD U...', 'Smart TV 4K LG UHD UR7500PSC 43 inci, 2023.avif', '80 W', 'television')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Smart TV 4K LG UHD UR7500PSC 43 inci, 2023.avif" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/TV LG.html" class="title">Smart TV 4K LG UHD U...</a></h3>
+            <p>Capacity: 80 W</p>
+        </div>
+
+        <div class="product-card" id="product16" data-category="television" data-brand="sharp">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product16" onclick="toggleBookmark('product16', 'Sharp 4TC55FJI X 55 ...', 'Sharp 4TC55FJI X 55 Inch UHD Google TV 2.jpg', '55 W', 'television')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Sharp 4TC55FJI X 55 Inch UHD Google TV 2.jpg" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/TV Sharp.html" class="title">Sharp 4TC55FJI X 55 ...</a></h3>
+            <p>Capacity: 50 W</p>
+        </div>
+
+        <div class="product-card" id="product17" data-category="kitchen-electronics" data-brand="kels">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product17" onclick="toggleBookmark('product17', 'Kels 300 MI Rice Coo...', 'Kels 300 MI Rice Cooker Mini.webp', '250 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Kels 300 MI Rice Cooker Mini.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Rice Cooker Kels.html" class="title">Kels 300 MI Rice Coo...</a></h3>
+            <p>Capacity: 250 W</p>
+        </div>
+
+        <div class="product-card" id="product18" data-category="home-electronics" data-brand="kels">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product18" onclick="toggleBookmark('product18', 'Kels Dry Iron', 'Kels Dry Iron.webp', '350 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Kels Dry Iron.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Setrika Kels.html" class="title">Kels Dry Iron</a></h3>
+            <p>Capacity: 350 W</p>
+        </div>
+
+        <div class="product-card" id="product19" data-category="kitchen-electronics" data-brand="panasonic">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product19" onclick="toggleBookmark('product19', 'Panasonic 1.8 L Rice...', 'Panasonic 1.8 L Rice Cooker SR-CEZ18SR.webp', '400 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Panasonic 1.8 L Rice Cooker SR-CEZ18SR.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Rice Cooker Panasonic.html" class="title">Panasonic 1.8 L Rice...</a></h3>
+            <p>Capacity: 400 W</p>
+        </div>
+
+        <div class="product-card" id="product20" data-category="kitchen-electronics" data-brand="philips">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product20" onclick="toggleBookmark('product20', 'Philips 1.8 L Rice ...', 'Philips 1.8 L Rice Cooker Digital HD4515.webp', '400 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Philips 1.8 L Rice Cooker Digital HD4515.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Rice Cooker Philips.html" class="title">Philips 1.8 L Rice ...</a></h3>
+            <p>Capacity: 400 W</p>
+        </div>
+
+        <div class="product-card" id="product21" data-category="air-conditioner" data-brand="daikin">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product21" onclick="toggleBookmark('product21', 'Daikin AC Single STC...', 'Daikin AC Single STC15NV ½ PK.webp', '390 W', 'air-conditioner')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Daikin AC Single STC15NV ½ PK.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/AC Daikin.html" class="title">Daikin AC Single STC...</a></h3>
+            <p>Capacity: 390 W</p>
+        </div>
+
+        <div class="product-card" id="product22" data-category="air-conditioner"  data-brand="panasonic">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product22" onclick="toggleBookmark('product22', 'Panasonic AC CS/CU-X...', 'Panasonic AC CSCU-XPU5XKJ.webp', '410 W', 'air-conditioner')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Panasonic AC CSCU-XPU5XKJ.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/AC Panasonic.html" class="title">Panasonic AC CS/CU-X...</a></h3>
+            <p>Capacity: 410 W</p>
+        </div>
+
+        <div class="product-card" id="product23" data-category="home-electronics" data-brand="philips">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product23" onclick="toggleBookmark('product23', 'Philips Dry Iron HD1...', 'Philips Dry Iron HD117380.webp', '350 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Philips Dry Iron HD117380.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Setrika Philips.html" class="title">Philips Dry Iron HD1...</a></h3>
+            <p>Capacity: 350 W</p>
+        </div>
+
+        <div class="product-card" id="product24" data-category="home-electronics" data-brand="cosmos">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product24" onclick="toggleBookmark('product24', 'Cosmos Iron CIS-418...', 'Cosmos Iron CIS-418.webp', '400 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Cosmos Iron CIS-418.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Setrika Cosmos.html" class="title">Cosmos Iron CIS-418...</a></h3>
+            <p>Capacity: 400 W</p>
+        </div>
+
+        <div class="product-card" id="product25" data-category="home-electronics" data-brand="sharp">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product25" onclick="toggleBookmark('product25', 'Sharp Vacuum Cleaner...', 'Sharp Vacuum Cleaner EC-NS-18-RD Red.webp', '450 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Sharp Vacuum Cleaner EC-NS-18-RD Red.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Vacuum Sharp.html" class="title">Sharp Vacuum Cleaner...</a></h3>
+            <p>Capacity: 450 W</p>
+        </div>
+
+        <div class="product-card" id="product26" data-category="home-electronics" data-brand="samsung">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product26" onclick="toggleBookmark('product26', 'Samsung Vacuum Clean...', 'Samsung Vacuum Cleaner Robot VR05R5050WKSE 0.2 L.webp', '55 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Samsung Vacuum Cleaner Robot VR05R5050WKSE 0.2 L.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Vacuum Samsung.html" class="title">Samsung Vacuum Cle...</a></h3>
+            <p>Capacity: 55 W</p>
+        </div>
+
+        <div class="product-card" id="product27" data-category="home-electronics"  data-brand="electrolux">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product27" onclick="toggleBookmark('product27', 'Electrolux Vacuum Er...', 'Electrolux Vacuum Ergorapido WQ61-10GG.webp', '18 W', 'home-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Electrolux Vacuum Ergorapido WQ61-10GG.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Vacuum Electrolux.html" class="title">Electrolux Vacuum Er...</a></h3>
+            <p>Capacity: 18 W</p>
+        </div>
+
+        <div class="product-card" id="product28" data-category="kitchen-electronics" data-brand="philips">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product28" onclick="toggleBookmark('product28', 'Philips Blender HR20...', 'Philips 1.8 L Rice Cooker Digital HD4515.webp', '290 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Philips Blender HR204213 1L.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Blender Philips.html" class="title">Philips Blender HR20...</a></h3>
+            <p>Capacity: 290 W</p>
+        </div>
+
+        <div class="product-card" id="product29" data-category="kitchen-electronics" data-brand="sharp">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product29" onclick="toggleBookmark('product29', 'Sharp Blender EM-151...', 'Sharp Blender EM-151P-WH 1.5L White.webp', '350 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Sharp Blender EM-151P-WH 1.5L White.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Blender Sharp.html" class="title">Sharp Blender EM-151...</a></h3>
+            <p>Capacity: 350 W</p>
+        </div>
+
+        <div class="product-card" id="product30" data-category="kitchen-electronics" data-brand="beko">
+            <div class="border-book">
+                <img src="img/bookmark.png" class="book-pic" data-product-id="product30" onclick="toggleBookmark('product30', 'Beko Blender TBN7400...', 'Beko Blender TBN7400W 1.75L White.webp', '400 W', 'kitchen-electronics')">
+            </div>
+            <div class="border-pict">
+                <img src="img/Beko Blender TBN7400W 1.75L White.webp" alt="Kris Air Purifier">
+            </div>
+            <h3><a href="description/Blender Beko.html" class="title">Beko Blender TBN7400...</a></h3>
+            <p>Capacity: 400 W</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="menu-footer">
+
+    <footer class="footer">
+        <div class="footer__addr">
+          <h1 class="footer__logo"><img src=".\img\Logo Sileksi REVIISIIII 1.png" alt=""></h1>
+        
+          <address>
+            Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145<br>                            
+          </address>
+
+          <p><a class="email" href="mailto:example@gmail.com">sileksi@email.com</a><br></p>
+          <p class="number">0812 3456 7890</p>
+
+        </div>
+        
+        <ul class="footer__nav">
+          <li class="nav__item">
+            <h2 class="nav__title">Follow us</h2>    
+            <ul class="nav__ul">
+              <li>
+                <a href="#"><img src=".\img\twitter.png" alt=""></a>
+              </li>
+      
+              <li>
+                <a href="#"><img src=".\img\Instagram_logo_2022 1.png" alt=""></a>
+              </li>
+                  
+              <li>
+                <a href="#"><img src=".\img\Linkedin.png" alt=""></a>
+              </li>
+
+              <li>
+                <a href="#"><img src=".\img\fb_icon_325x325 1.png" alt=""></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <hr class="line-foot">
+        <div class="legal">
+          <p>&copy;SILEKSI.</p>
+          
+          <div class="legal__links">
+            <a href="https://filkom.ub.ac.id/" class="privacy">Privacy Policy</a>
+            <a href="#" class="term">Term of Use</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="js/scriptProducts.js"></script>
+</body>
+</html>
